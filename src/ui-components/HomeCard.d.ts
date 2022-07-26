@@ -5,8 +5,8 @@
  **************************************************************************/
 
 import React from "react";
-import { Home } from "../models";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
+import { Home } from "../models";
 import { ViewProps } from "@aws-amplify/ui-react";
 export declare type HomeCardProps = React.PropsWithChildren<Partial<ViewProps> & {
     home?: Home;

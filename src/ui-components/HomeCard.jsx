@@ -6,10 +6,17 @@
 
 /* eslint-disable */
 import React from "react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
+import {
+  getOverrideProps,
+  useNavigateAction,
+} from "@aws-amplify/ui-react/internal";
 import { Image, Text, View } from "@aws-amplify/ui-react";
 export default function HomeCard(props) {
   const { home, overrides, ...rest } = props;
+  const imageOnClick = useNavigateAction({
+    type: "url",
+    url: `${"./homes/"}${home?.id}`,
+  });
   return (
     <View
       width="606px"
@@ -29,6 +36,9 @@ export default function HomeCard(props) {
         left="0px"
         padding="0px 0px 0px 0px"
         src={home?.image_url}
+        onClick={() => {
+          imageOnClick();
+        }}
         {...getOverrideProps(overrides, "image")}
       ></Image>
       <Text
